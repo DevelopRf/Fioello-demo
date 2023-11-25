@@ -1,0 +1,14 @@
+@mixin Font ($f-f: null, $f-s: null, $f-w: null, $l-h: null, $l-s: null) {
+    font-family: $f-f;
+    font-size: $f-s;
+    font-weight: $f-w;
+    line-height: $l-h;
+    letter-spacing: $l-s;
+}
+
+@mixin Flex ($d: null, $j-c: null, $a-i:null)
+{
+    display: $d;
+    justify-content: $j-c;
+    align-items: $a-i;
+}

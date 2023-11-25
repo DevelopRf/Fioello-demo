@@ -1,0 +1,96 @@
+footer {
+
+    background-color: $clr_footer_back;
+
+    .menu {
+        padding: 73px 0;
+
+        .wrapper {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(1, 1fr);
+
+            @media (min-width: 681px) and (max-width: 1024px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (min-width: 1025px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .nav_menu {
+                h4 {
+                    margin: 0 0 23px;
+                }
+
+                ul {
+                    li {
+                        &:not(:last-child) {
+                            padding: 0 0 3px;
+                        }
+
+
+                        a {
+                            color: $clr_footer_txt;
+
+                            &:hover {
+                                color: $clr_primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .contact {
+
+        text-align: center;
+
+        .wrapper {
+            border-top: 1px solid #eceae1;
+            padding: 24px 0 22px;
+
+            @media (min-width:1025px) {
+                @include Flex ($d: Flex, $j-c: space-between, $a-i: center);
+
+            }
+
+            .left {
+                /* margin: 15px 0 0; */
+                color: $clr_info;
+
+                a {
+                    &:hover {
+                        color: $clr_primary;
+                    }
+                }
+            }
+
+            /* .center {
+                margin: 17px 0 5px;
+            } */
+
+            .right {
+                /* margin: 15px 0 0; */
+                @include Flex ($d: flex, $j-c: center);
+
+                li {
+                    &:first-child {
+                        margin: 0 25px 0 0;
+                    }
+
+                    a {
+                        @include Font($f-s: 10px, $l-s: .2em);
+                        color: $clr_info;
+
+                        &:hover {
+                            color: $clr_primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

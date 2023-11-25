@@ -1,0 +1,56 @@
+%line {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        display: inline-block;
+        width: 0;
+        height: 1px;
+        background-color: $clr_header_txt;
+        transition: 0.3s;
+    }
+}
+
+%dropdown {
+    display: block;
+    @include Font ($f-s: 13px, $l-h: 19px, $l-s: normal);
+    color: $clr_submenu;
+}
+
+%down_up {
+    &::after {
+        font-family: 'Bootstrap-icons';
+        position: absolute;
+        font-size: 9px;
+        content: " \F229";
+        color: $clr_header_txt;
+    }
+
+    &.collapsed::after {
+        content: " \F231";
+        position: absolute;
+    }
+}
+
+%btn {
+    padding: 18px 42px;
+    color: #fff;
+    display: inline-block;
+    border: none;
+    @include Font ($l-s: .1em, $f-w: 500);
+    background-color: $clr_primary;
+    transition: 0.3s;
+
+    &:hover
+    {
+        background-color: $clr_btn;
+    }
+}
+
+%input {
+    width: 100%;
+    padding: 18px 19px;
+    &:focus {
+        outline: none;
+    }
+}
