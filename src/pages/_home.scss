@@ -307,7 +307,7 @@
 
     .product_cards {
         display: grid;
-        column-gap: 40px;
+        gap: 40px;
         grid-template-columns: repeat(1, 1fr);
 
         @media (min-width:681px) and (max-width:768px) {
@@ -325,7 +325,6 @@
         .product_card {
 
             box-sizing: content-box;
-            margin: 0 0 40px;
 
             &:hover {
 

@@ -1,11 +1,11 @@
-let play = document.getElementById('play');
-let search = document.getElementById('searchBox');
-let exit = document.getElementById('play');
-let goUp = document.querySelector('.goUp');
+const play = document.getElementById('play');
+const searchBox = document.querySelector('.right .searchBox');
+const searchToggle = document.querySelector(".right li:first-of-type")
+const exit = document.getElementById('play');
+const goUp = document.querySelector('.goUp');
 const header = document.querySelector('header')
 const headerHeight = document.querySelectorAll('nav .menu li a')
-const right = document.querySelector('nav .right')
-
+const moveDown = document.querySelector(".moveDown")
 
 let swiper1 = new Swiper(".mySwiper1", {
   spaceBetween: 30,
@@ -53,46 +53,20 @@ function videoPlayer() {
   play.style.display = 'block';
 }
 
-
-
 function exitVideo() {
   exit.style.display = 'none';
 }
 
-/* var sale = document.getElementsByClassName('sale');
-var sold = document.getElementsByClassName('sold'); */
 
-/* function stock() {
-  if (sale == "") {
-    sale.style.display = 'none';
-  }
-  else if (sold == ""){
-    sold.style.display = 'none';
-  }
-  else
-  {
-    sale.style.display = 'blok';
-    sold.style.display = 'blok';
-  }
-} */
-
-function searching() {
-  if (search.style.visibility == 'visible' && search.style.opacity == '1') {
-    search.style.visibility = 'hidden';
-    search.style.opacity = '0';
-
-  }
-  else {
-    search.style.visibility = 'visible';
-    search.style.opacity = '1';
-  }
-}
+searchToggle.addEventListener("click", () => {
+  searchBox.classList.toggle("active")
+}, true)
 
 goUp.addEventListener('click', () => {
   scrollTo(0, 0)
 })
 
-document.onscroll = function () {
+document.addEventListener("scroll", () => {
   if (scrollY > 200) {
     goUp.style.visibility = 'visible'
   }
@@ -100,25 +74,7 @@ document.onscroll = function () {
     goUp.style.visibility = 'hidden'
   }
 
-  if (scrollY > 300) {
-    for (const item of headerHeight) {
-      item.style.padding = `20px 29px`
-    }
-    right.style.display = 'none'
-    header.style.position = 'fixed'
-    header.style.width = `100%`
-    header.style.bottom = `100%`
-    header.style.transform = 'translateY(100%)'
-  }
-  else if (scrollY < 116) {
-    for (const item of headerHeight) {
-      item.style.padding = `47px 29px`
-    }
-    header.style.position = 'static'
-    right.style.display = 'block'
-  }
-  else {
-    header.style.transform = 'translateY(0)'
+  if (scrollY > 300) { moveDown.classList.add("active") }
 
-  }
-}
+  else { moveDown.classList.remove("active") }
+})
