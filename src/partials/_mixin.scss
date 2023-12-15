@@ -6,9 +6,9 @@
     letter-spacing: $l-s;
 }
 
-@mixin Flex ($d: null, $j-c: null, $a-i:null)
-{
+@mixin Flex ($d: null, $j-c: null, $a-i: null, $c-g: null) {
     display: $d;
     justify-content: $j-c;
     align-items: $a-i;
+    column-gap: $c-g;
 }

@@ -78,7 +78,7 @@
 
             .text_wrapper {
                 position: absolute;
-                top: -480px;
+                top: -460px;
                 left: 10px;
                 max-width: 281px;
                 z-index: 99;
@@ -301,6 +301,10 @@
                     margin: 20px 0;
                 }
 
+                &.active {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
         }
     }
@@ -484,7 +488,7 @@
                         }
 
                     }
-                }
+                }                
             }
 
             .slogan_title {

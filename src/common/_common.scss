@@ -42,6 +42,10 @@ body {
                 height: 100%;
             }
         }
+
+        &.active {
+            display: block;
+        }
     }
 
     .goUp {
@@ -273,39 +277,6 @@ nav {
 .fa-solid {
     rotate: 90deg;
     -webkit-text-stroke: 0.6px #fff;
-}
-
-.search_mob {
-
-    padding: 0 20px;
-
-    @media (min-width:1025px) {
-        display: none;
-    }
-
-    background-color: #fff;
-    display: flex;
-
-    input {
-        padding: 12px 20px;
-        border: none;
-        width: 100%;
-
-        &:focus {
-            outline: none;
-        }
-    }
-
-    button {
-        border: none;
-        background-color: transparent;
-
-        .fa-solid {
-            color: $clr_arrow;
-            font-size: 20px;
-            -webkit-text-stroke: 0.6px #fff;
-        }
-    }
 }
 
 .signature {

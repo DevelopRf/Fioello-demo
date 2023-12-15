@@ -6,7 +6,10 @@ const goUp = document.querySelector('.goUp');
 const header = document.querySelector('header')
 const headerHeight = document.querySelectorAll('nav .menu li a')
 const moveDown = document.querySelector(".moveDown")
-
+const filter = document.querySelector(".filter_wrapper .filter_header button")
+const filterMenu = document.querySelector(".filter_menu")
+const video = document.querySelector(".video_image")
+const overlay = document.querySelector(".overlay")
 let swiper1 = new Swiper(".mySwiper1", {
   spaceBetween: 30,
   effect: "fade",
@@ -37,16 +40,18 @@ let swiper2 = new Swiper(".mySwiper2", {
   },
 });
 
-function openFilter() {
-  let filter = document.getElementById('filter_item');
-  if (getComputedStyle(filter).visibility == "hidden" && getComputedStyle(filter).opacity == "0") {
-    filter.style.visibility = 'visible';
-    filter.style.opacity = '1';
-  }
-  else {
-    filter.style.visibility = 'hidden';
-    filter.style.opacity = '0';
-  }
+filter && filter.addEventListener("click", () => {
+  filterMenu.classList.toggle("active")
+})
+
+if (video) {
+  video.addEventListener("click", () => {
+    overlay.classList.add("active")
+  })
+
+  overlay.addEventListener("click", () => {
+    overlay.classList.remove("active")
+  })
 }
 
 function videoPlayer() {
@@ -58,9 +63,14 @@ function exitVideo() {
 }
 
 
-searchToggle.addEventListener("click", () => {
+searchToggle.addEventListener("click", (e) => {
   searchBox.classList.toggle("active")
-}, true)
+  e.stopPropagation()
+})
+
+searchBox.addEventListener("click", (e) => {
+  e.stopPropagation()
+})
 
 goUp.addEventListener('click', () => {
   scrollTo(0, 0)
