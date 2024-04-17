@@ -9,6 +9,39 @@
     color: #fff;
 }
 
+.p-20 {
+    --bs-gutter-x: 20px;
+    padding: 0 var(--bs-gutter-x) 0 var(--bs-gutter-x);
+}
+
+.p-15{
+    --bs-gutter-x: 15px;
+    padding: 0 var(--bs-gutter-x) 0 var(--bs-gutter-x);
+}
+
+.p-10{
+    --bs-gutter-x: 10px;
+    padding: 0 var(--bs-gutter-x) 0 var(--bs-gutter-x);
+}
+
+
+.space-outer {
+    --bs-gutter-x: 20px;
+    margin: 0 calc(-1 * var(--bs-gutter-x)) 0 calc(-1 * var(--bs-gutter-x));
+}
+
+.gap-40 {
+    row-gap: 40px;
+}
+
+.gap-62{
+    row-gap: 62px;
+}
+
+.gap-30{
+    row-gap: 30px;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -54,10 +87,13 @@ body {
         height: 45px;
         bottom: 20px;
         right: 20px;
+        z-index: 999;
         border-radius: 50%;
         background-color: $clr_primary;
         overflow: hidden;
         visibility: hidden;
+        opacity: 0;
+        transition: 0.25s;
 
         &::after,
         &::before {
@@ -155,7 +191,6 @@ h3 {
 }
 
 h4 {
-    font-family: 'Montserrat', sans-serif;
     @include Font($f-s: 12px, $l-h: 2em, $f-w: 500, $l-s: 0.1em);
     margin: 0;
 }
@@ -178,37 +213,8 @@ nav {
 }
 
 .container {
-    width: 100%;
-    padding: 0 10px;
-    margin: auto;
-
-    @media (min-width:320px) and (max-width:480px) {
-        max-width: 320px;
-    }
-
-    @media (min-width:481px) and (max-width:680px) {
-        max-width: 470px;
-    }
-
-    @media (min-width:681px) and (max-width:768px) {
-        max-width: 620px;
-    }
-
-    @media (min-width:769px) and (max-width:1024px) {
-        max-width: 768px;
-    }
-
-    @media (min-width:1025px) and (max-width:1200px) {
-        max-width: 970px;
-    }
-
-    @media (min-width:1201px) and (max-width:1400px) {
-        max-width: 1120px;
-    }
-
-    @media (min-width:1401px) {
-        max-width: 1320px;
-    }
+    --bs-gutter-x: 20px;
+    padding: 0 var(--bs-gutter-x);
 }
 
 .heading {
@@ -231,20 +237,60 @@ nav {
 .prev,
 .next {
     display: none;
-    height: 30px;
+    width: 50px;
+    height: 12px;
     position: absolute;
     z-index: 999;
     top: 50%;
     transform: translateY(-50%);
 
-    span {
-        font-size: 70px;
-        color: $clr_arrow;
-        user-select: none;
+    &:hover {
+        span {
+            background-color: $clr_secondary;
 
-        &:hover {
-            color: $clr_secondary;
+            &::before,
+            &::after {
+                background-color: $clr_secondary;
+            }
         }
+    }
+
+    span {
+        display: inline-block;
+        position: relative;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 1px;
+        background-color: $clr_arrow;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 9px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: $clr_arrow;
+            transform-origin: 0 100%;
+            transform: rotate(42deg);
+        }
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 9px;
+            height: 100%;
+            background-color: $clr_arrow;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform-origin: 0 100%;
+            transform: rotate(321deg);
+        }
+
     }
 
     @media (min-width:1025px) {
@@ -254,23 +300,35 @@ nav {
 
 .prev {
 
-    left: 10px;
+    left: 20px;
+
+}
+
+.next {
+    right: 20px;
 
     span {
         rotate: 180deg;
     }
 }
 
-.next {
-    right: 10px;
-}
+.swiper-pagination {
+    --swiper-pagination-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.slogan_cards {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    span {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        background-color: #000;
+        opacity: 1;
+    }
 
-    @media (min-width:1025px) {
-        grid-template-columns: repeat(2, 1fr);
+    .swiper-pagination-bullet-active {
+        width: 12px;
+        height: 12px;
     }
 }
 

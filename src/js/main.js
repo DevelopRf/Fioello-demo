@@ -78,10 +78,12 @@ goUp.addEventListener('click', () => {
 
 document.addEventListener("scroll", () => {
   if (scrollY > 200) {
-    goUp.style.visibility = 'visible'
+    goUp.style.visibility = 'visible'    
+    goUp.style.opacity = 1
   }
   else {
     goUp.style.visibility = 'hidden'
+    goUp.style.opacity = 0
   }
 
   if (scrollY > 300) { moveDown.classList.add("active") }

@@ -1,20 +1,19 @@
 .about_title {
     background-size: cover;
-    background-position: center;
-
+    background-attachment: fixed;
     position: relative;
 
     height: 150px;
 
-    @media (min-width:481px) {
+    @media (min-width:480px) {
         height: 200px;
     }
 
-    @media (min-width:681px) {
+    @media (min-width:576px) {
         height: 284px;
     }
 
-    @media (min-width:769px) {
+    @media (min-width:768px) {
         height: 320px;
     }
 
@@ -41,7 +40,7 @@
                 @include Font ($f-s: 36px, $l-h: 1.32em);
                 color: #e7e7e7;
 
-                @media (min-width:681px) {
+                @media (min-width:576px) {
                     font-size: 50px;
                 }
             }
@@ -64,15 +63,15 @@
 
             padding: 0;
 
-            @media (min-width:681px) {
+            @media (min-width:576px) {
                 max-width: 498px;
             }
 
-            @media (min-width:769px) {
+            @media (min-width:768px) {
                 max-width: 545px;
             }
 
-            @media (min-width:1025px) {
+            @media (min-width:1024px) {
                 max-width: 454px;
             }
 
@@ -80,7 +79,8 @@
                 span {
                     color: $clr_header_different;
                 }
-                @media (min-width:1401px) {
+
+                @media (min-width:1400px) {
                     margin: 25px 0 0;
                 }
             }
@@ -88,7 +88,7 @@
             p {
                 margin: 27px 0;
 
-                @media (min-width:1025px) and (max-width:1400px) {
+                @media (min-width:1024px) {
                     margin: 16px 0;
                     font-size: 15px;
                 }
@@ -110,12 +110,6 @@
         }
 
         .video_image {
-
-            margin: 80px 0 0;
-
-            @media (min-width:1025px) {
-                margin: 0;
-            }
 
             overflow: hidden;
             position: relative;
@@ -147,7 +141,7 @@
                 border-radius: 50%;
                 background-color: #fff;
 
-                @media (min-width:769px) {
+                @media (min-width:768px) {
                     width: 103px;
                     height: 103px;
                 }
@@ -162,7 +156,7 @@
                     font-size: 20px;
                     color: $clr_primary;
 
-                    @media (min-width:769px) {
+                    @media (min-width:768px) {
                         font-size: 34px;
                     }
 

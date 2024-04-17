@@ -9,15 +9,9 @@
         padding: 50px 15px;
         text-align: center;
 
-        @media (min-width:481px) {
+        @media (min-width:480px) {
             padding: 50px 9%;
         }
-       /*  @media (min-width:481px) {
-            padding: 50px 57px;
-        }
-        @media (min-width:1025px) {
-            padding: 50px 73px;
-        } */
         .image {
             width: 154px;
             height: 154px;
@@ -44,7 +38,7 @@
                     color: $clr_header_different;
                 }
 
-                @media (min-width:681px) {
+                @media (min-width:768px) {
                     font-size: 38px;
                 }
             }
@@ -60,9 +54,6 @@
     }
 
     .form_card {
-        margin: 62px 0 0;
-        padding: 0 15px;
-        /* padding: 0 0 0 50px; */
 
         h2,
         input,
@@ -90,7 +81,7 @@
 
             a {
                 @extend %btn;
-                @media (min-width:681px) {
+                @media (min-width:768px) {
                     float: left;
                 }
             }
